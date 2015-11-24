@@ -67,7 +67,6 @@
 	    <img src='img/gitk-masmas.png' title='Mostrando evolución del repo'>
 	  </section>
 	</section>      
-	
 	<section>
 	  <section>
 	    <h2><pre><code>git tag -a v0.1 
@@ -84,14 +83,111 @@
 
 	</section>
 
+	<section>	
+	  <section>
+	    <h2><pre><code>git checkout v0.2</code></pre></h2>
+	    <img src='img/git-checkout.png' alt='git checkout v2'>
+	  </section>
+	
+	  <section>
+	    <h2><pre><code>git checkout -b desdev02</code></pre></h2>
+	    <img src='img/git-checkout-b.png' alt='git checkout v2'>
+
+	    <aside class='notes'>Finalmente se fusiona con un git checkout master, git merge desdev02</aside>
+	  </section>
+
+	</section>
+
+	<section>
+	  <section>
+	    <h1>Creando <em>releases</em></h1>
+	    
+	    <h1><pre><code>git push --tags</code></pre></h1>
+	  </section>
+
+	  <section>
+	    <img src='img/releases.png' alt='releases'>
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h1><em>Releases</em> == hitos == <em>Milestones</em></h1>
+	    <aside class='notes'>Milestone es una piedra kilométrica o mojón. Pero organizar un proyecto de mojón en mojón no suena muy bien</aside>
+	  </section>
+
+	  <section>
+	    <h1>Un hito se organiza en tareas</h1>
+	  </section>
+
+	  <section>
+	    <img src='img/hitos.png'>
+	  </section>
+
+	  <section>
+	    <h2><em>commit</em>→tarea</h2>
+
+	    <h3><pre><code>git commit -am "Hablando de tareas refs #1"</code></pre></h3>
+	  </section>
+	    
+	  <section>
+	    <img src='img/tareas.png'>
+	  </section>
+
+	  <section>
+	    <h2>Commit ⚿ <em>issue</em>   </h2>
+	    <img src='img/cierra.png' title='cierra la tarea'>
+	  </section>
+
+	</section>
+
+	<section>
+	  <section>
+	    <h3>Settings →</h3>
+	    <h2>Webhooks & services→</h2>
+	    <h1>Add Service</h1>
+	    
+	    <aside class='notes'>Twitter y un montón de servicios más</aside>
+	  </section>
+
+	  <section>
+	    <img src='img/twitter.png' alt='Integración Twitter ivcambios'>
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h2>Los <em>hooks</em> hacen cosas cuando se hacen cosas.</h2>
+	    <h3><code>pull</code>, <code>push</code>, <code>commit</code>... </h3>
+	  </section>
+
+	  <section>
+	    <h3><pre><code>cd .git/hooks
+mv commit-msg.sample commig-msg
+chmod +x commit-msg </code></pre>
+	    </h3>
+	  </section>
+
+	  <section><pre><code>#!/bin/sh
+SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+grep -qs "^$SOB" "$1" || echo "$SOB" >> "$1"
+# This example catches duplicate Signed-off-by lines.
+test "" = "$(grep '^Signed-off-by: ' "$1" |
+	 sort | uniq -c | sed -e '/^[ 	]*1[ 	]/d')" || {
+	echo >&2 Duplicate Signed-off-by lines.
+	exit 1
+}</code></pre>
+</section>
+</section>
+
       </div>
 	    
-	  </div>
-	  
-	  <script src="lib/js/head.min.js"></script>
-	  <script src="js/reveal.js"></script>
-	  
-	  <script>
+    </div>
+    
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    
+    <script>
 	    
 	    // Full list of configuration options available at:
 	    // https://github.com/hakimel/reveal.js#configuration
