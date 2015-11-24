@@ -189,8 +189,38 @@ test "" = "$(grep '^Signed-off-by: ' "$1" |
 	echo >&2 Duplicate Signed-off-by lines.
 	exit 1
 }</code></pre>
-</section>
-</section>
+	  </section>
+
+	  <section>
+	    <img src='img/ganchos.png' alt='usando ganchos'>
+	  </section>
+	</section>
+	
+	<section>
+	  <section>
+	    <h1>Alicatado frente a fontanería</h1>
+	  </section>
+
+	  <section>
+	    <h2><pre><code>git rev-list  
+    --pretty=oneline HEAD ^master</code></pre></h2>
+
+	      <pre><code>5195ddf21df96967dd2ee271cc81d3260c9b9109 Adds refs
+e717024d226b41a96ac7120631547287067998bf Añade reset
+12b6f3a737863f7f52b4f2836926bf3f1ef91510 Merge branch 'master' into gh-pages
+09964fb8f17b11601f626dc7d54af640a0ecb08b moving
+a832eac83cf52fffd3e09bc2367c5fd46b34374f Imagen de ganchos Por: JJ Merelo <jjmerelo@gmail.com>
+		...</code></pre>
+	  </section>
+
+	  <section>
+	    <h2><pre><code>git reflog --relative-date</code></pre></h2>
+
+	    <img src='img/reflog.png' alt='reflog'>
+	  </section>
+
+	</section>
+	
 
       </div>
 	    
