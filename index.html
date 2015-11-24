@@ -136,6 +136,44 @@
 
 	</section>
 
+	<section>
+	  <section>
+	    <h3>Settings →</h3>
+	    <h2>Webhooks & services→</h2>
+	    <h1>Add Service</h1>
+	    
+	    <aside class='notes'>Twitter y un montón de servicios más</aside>
+	  </section>
+
+	  <section>
+	    <img src='img/twitter.png' alt='Integración Twitter ivcambios'>
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h2>Los <em>hooks</em> hacen cosas cuando se hacen cosas.</h2>
+	    <h3><code>pull</code>, <code>push</code>, <code>commit</code>... </h3>
+	  </section>
+
+	  <section>
+	    <h3><pre><code>cd .git/hooks
+mv commit-msg.sample commig-msg
+chmod +x commit-msg </code></pre>
+	    </h3>
+	  </section>
+
+	  <section><pre><code>#!/bin/sh
+SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+grep -qs "^$SOB" "$1" || echo "$SOB" >> "$1"
+# This example catches duplicate Signed-off-by lines.
+test "" = "$(grep '^Signed-off-by: ' "$1" |
+	 sort | uniq -c | sed -e '/^[ 	]*1[ 	]/d')" || {
+	echo >&2 Duplicate Signed-off-by lines.
+	exit 1
+}</code></pre>
+</section>
+</section>
 
       </div>
 	    
