@@ -170,6 +170,26 @@
 
 	<section>
 	  <section>
+	    <h1>Código sin probar == código roto</h1>
+	  </section>
+
+	  <section>
+	    <h3>Integración continua  → Travis</h3>
+
+	    <pre><code>branches:
+  except:
+    - master
+language: c
+before_install:
+  - wget --quiet --output-document=- http://binaries.html-tidy.org/binaries/tidy-5.1.25/tidy-5.1.25-64bit.deb | dpkg --install -
+script: tidy index.html
+	    </code></pre>
+	  </section>
+	</section>
+
+
+	<section>
+	  <section>
 	    <h2>Los <em>hooks</em> hacen cosas cuando se hacen cosas.</h2>
 	    <h3><code>pull</code>, <code>push</code>, <code>commit</code>... </h3>
 	  </section>
