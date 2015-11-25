@@ -1,6 +1,7 @@
 branches:
   except:
     - master
+sudo: required
 language: c
 before_install:
   - wget --quiet --output-document=- http://binaries.html-tidy.org/binaries/tidy-5.1.25/tidy-5.1.25-64bit.deb | dpkg --install -
