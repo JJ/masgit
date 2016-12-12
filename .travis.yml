@@ -5,4 +5,4 @@ sudo: required
 language: c
 before_install:
   - wget --quiet --output-document=tidy.deb http://binaries.html-tidy.org/binaries/tidy-5.1.25/tidy-5.1.25-64bit.deb && sudo dpkg --install tidy.deb
-script: tidy index.html
+script: code = $(tidy index.html) && expr $(($code - 1))
