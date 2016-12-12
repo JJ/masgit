@@ -63,14 +63,28 @@
 
 	<section>
 	  <h1>GitHub es una red social</h1>
-
+	  
 	  <aside class='notes'>Estrellas, seguir, <em>hacer fork</em>,
-	  comentar sobre los commits, <em>meetups</em>, todos los
-	  elementos de una red social en un sencillo paquete. </aside>
+	    comentar sobre los commits, <em>meetups</em>, todos los
+	    elementos de una red social en un sencillo paquete. </aside>
+	</section>
+
+	<!-- En caso de que algo falle -->
+	<section>
+	  
+	  <section><h1>Oops</h1>
+	    <img src='img/clave.png' alt='fake commit'>
+
+	  </section>
+
+	  <section>
+	    <h2 class='fragment'><pre><code>git reset --hard HEAD~1</code></pre></h2>
+	    <img src='img/reset.png' alt='back from oops'>
+	  </section>
 	</section>
 
 	<!-- Organizando el trabajo -->
-		<section>
+	<section>
 	  <section>
 	    <img src='img/gitk.png' title='Mostrando ramas'>
 	  </section>
@@ -82,7 +96,9 @@
 	  <section> 
 	    <img src='img/gitk-masmas.png' title='Mostrando evolución del repo'>
 	  </section>
-	</section>      
+	</section>
+
+	<!-- tags y cosas -->
 	<section>
 	  <section>
 	    <h2><pre><code>git tag -a v0.1 
@@ -97,9 +113,9 @@
 	    <img src='img/gitk-otrolabel.png' title='Con dos labels'>
 	  </section>
 
-	  <section data-background='img/trello.png' alt='canvas o como
-		   se llame' >
+	  <section data-background='img/trello.png' alt='canvas o como se llame' >
 	  </section>
+	  
 	</section>
 
 	<!-- Usando los tags -->
@@ -137,18 +153,7 @@
 	  </section>
 	</section>
 
-	<section>
-	  <section><h1>Oops</h1>
-	    <img src='img/clave.png' alt='fake commit'>
-
-	  </section>
-
-	  <section>
-	    <h2 class='fragment'><pre><code>git reset --hard HEAD~1</code></pre></h2>
-	    <img src='img/reset.png' alt='back from oops'>
-	  </section>
-	</section>
-
+	<!-- Trabajando con hitos -->
 	<section>
 	  <section>
 	    <h1><em>Releases</em> == hitos == <em>Milestones</em></h1>
@@ -180,6 +185,8 @@
 
 	</section>
 
+
+	<!-- Hooks e integración continua -- >
 	<section>
 	  <section>
 	    <h3>Settings →</h3>
