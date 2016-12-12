@@ -102,8 +102,7 @@
 	<!-- tags y cosas -->
 	<section>
 	  <section>
-	    <h2><pre><code>git tag -a v0.1 
-  -m "Tageando para el postureo"</code></pre></h2>
+	    <h2><pre><code>git tag -a v0.1 -m "Tageando para el postureo"</code></pre></h2>
 	  </section>
 
 	  <section>
@@ -120,7 +119,6 @@
 	</section>
 
 	<!-- Usando los tags -->
-
 	<section>	
 	  <section>
 	    <h2><pre><code>git checkout v0.2</code></pre></h2>
@@ -258,10 +256,11 @@ test "" = "$(grep '^Signed-off-by: ' "$1" |
 	  </section>
 
 	  <section>
-	    <h2><pre><code>git rev-list  
-    --pretty=oneline HEAD ^master</code></pre></h2>
+	    <h2>
+	      <pre><code>git rev-list --pretty=oneline HEAD ^master</code></pre>
+	    </h2>
 
-	      <pre><code>5195ddf21df96967dd2ee271cc81d3260c9b9109 Adds refs
+	    <pre><code>5195ddf21df96967dd2ee271cc81d3260c9b9109 Adds refs
 e717024d226b41a96ac7120631547287067998bf Añade reset
 12b6f3a737863f7f52b4f2836926bf3f1ef91510 Merge branch 'master' into gh-pages
 09964fb8f17b11601f626dc7d54af640a0ecb08b moving
